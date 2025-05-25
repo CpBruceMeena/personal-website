@@ -684,16 +684,18 @@ body {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
+  gap: 3.5rem;
 }
 .project-card {
+  position: relative;
   min-width: 0;
   max-width: 100%;
   flex: unset;
-  margin: 0;
+  margin: 1.5rem 0;
   background: linear-gradient(135deg, rgba(233,196,106,0.08) 0%, rgba(42,157,143,0.08) 100%);
   border-radius: 1.3rem;
   box-shadow: 0 6px 32px 0 rgba(44, 62, 80, 0.13);
-  padding: 2.2rem 2rem 2rem 2rem;
+  padding: 3rem 2rem 3rem 2rem;
   border: 1.5px solid rgba(255,255,255,0.13);
   display: flex;
   flex-direction: column;
@@ -705,9 +707,10 @@ body {
   text-align: left;
 }
 .project-card:hover {
+  z-index: 2;
   box-shadow: 0 16px 40px 0 rgba(42,157,143,0.18);
   border: 1.5px solid var(--saffron);
-  transform: translateY(-6px) scale(1.025);
+  transform: translateY(-6px) scale(1.02);
 }
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(40px); }
