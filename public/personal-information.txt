@@ -1,0 +1,259 @@
+# Sandeep Mehta - Principal Software Engineer
+
+## Professional Summary
+
+I am a Principal Software Engineer with 4+ years of experience architecting and developing large-scale fintech solutions that serve millions of users and drive significant business growth. Currently leading engineering initiatives at INDMONEY, I specialize in building high-performance backend systems, implementing complex financial integrations, and transforming technical challenges into measurable business outcomes.
+
+My journey spans across prestigious organizations including INDMONEY, Angel One, and Goldman Sachs, where I've consistently delivered solutions that handle billions in financial transactions, optimize critical business processes, and enhance customer experiences at scale.
+
+## About Me
+
+My passion for technology began during my Integrated Master of Science in Mathematics at NIT Rourkela (2015-2020), where I developed a strong analytical foundation that continues to shape my approach to complex software engineering challenges. This mathematical background has been instrumental in my success with algorithmic optimization, data processing, and machine learning applications.
+
+I thrive at the intersection of cutting-edge technology and real-world business impact. Whether it's reducing calculation times from hours to minutes, building recommendation systems that generate millions in revenue, or architecting systems that serve 20+ million users daily, I'm driven by the opportunity to solve problems that matter.
+
+## Professional Experience
+
+### INDMONEY - Principal Software Engineer (September 2024 – Present)
+
+**Banking & Financial Integrations**
+- Spearheaded critical banking integrations including ICICI Bank LRS gateway implementation and Axis Bank's LRS native journey development
+- Established Axis Bank as a key lending partner through strategic technical integration
+- Led end-to-end development of complex financial workflows handling international remittances and lending operations
+
+**Portfolio Management & Revenue Growth**
+- Managed Fixed Deposit (FD) portfolio operations with comprehensive UI and customer journey improvements
+- Achieved remarkable business impact: 78.6% increase in FD acquisition and 57% growth in investment value (from ₹10 Cr to ₹15.7 Cr)
+- Implemented data-driven optimizations that directly translated to significant revenue growth
+
+**Security & Compliance Leadership**
+- Established comprehensive PII (Personally Identifiable Information) detection framework ensuring regulatory compliance
+- Implemented S3 encryption protocols securing sensitive financial data
+- Conducted SAML integration POC for enhanced access control and authentication systems
+- Led security audits and compliance initiatives meeting fintech industry standards
+
+**Backend-Driven Architecture**
+- Pioneered Backend-for-Frontend (BFF) methodology enabling backend-driven native pages
+- Reduced dependency on app builds and releases while increasing backend control over UI components
+- Streamlined deployment processes and improved development velocity across mobile and web platforms
+
+**Technical Stack:** AWS (ElastiCache, SNS, PostgreSQL, Lambda, EventBridge, SQS, API Gateway), Docker, Python (Django), Golang, Git, Bitbucket, Jenkins
+
+### Angel One - Senior Software Engineer (SDE-2) (April 2023 – September 2024)
+
+**Application Modernization & Migration**
+- Led complete migration of EDIS (Electronic Delivery Instruction Slip) application from Java to Golang
+- Optimized application release cycles and redesigned technical architecture reducing on-call issues by 80%
+- Improved overall system performance and maintainability through modern language adoption
+
+**Revolutionary Pledge System Transformation**
+- Modernized legacy Pledge application, migrating from Python to Golang
+- Eliminated inefficient file-based pledging system, reducing margin provision time from 1-2 hours to minutes
+- Significantly reduced operational overhead by eliminating manual file uploads/downloads to CDSL
+- Achieved over 80% reduction in client-reported problems through systematic process improvement
+
+**AI-Powered Recommendations Engine**
+- Developed comprehensive Recommendations and Advisory application driving user onboarding and engagement
+- Built intelligent stock recommendation system contributing to 10% of new buy orders
+- Created platform with 1+ million followed lists across various segments (ETFs, options, equity, individual stocks)
+- Generated over ₹50 Cr in annual revenue through intelligent stock discovery and recommendation algorithms
+
+**Infrastructure & Performance**
+- Devised end-to-end Disaster Recovery (DR) strategy across multiple AWS components ensuring high availability
+- Migrated complex SQL Server stored procedures to PySpark and Golang improving database performance
+- Implemented advanced caching policies, multithreading, and effective locking mechanisms
+- Optimized API performance achieving lower latency, better CPU/memory utilization, and higher throughput
+
+**Technical Stack:** AWS (Glue, SNS, SQS, Step Functions, Lambda, S3, ECS, Aurora DB, EventBridge, AppConfig, Secrets Manager), PySpark, Golang, Python, Docker, Kafka, Redis, Grafana, Prometheus
+
+### Angel One - Software Engineer (SDE-1) (February 2022 – March 2023)
+
+**Large-Scale Portfolio Management System**
+- Core member of Post-Trade data platform team serving 20+ million users
+- Redesigned Portfolio application in Golang using microservices architecture
+- Built real-time portfolio aggregation system processing data from Kafka, Redis, MSSQL, S3, and Aurora DB
+- Achieved maximum accuracy with minimal response time for live portfolio calculations
+
+**Big Data Processing & Optimization**
+- Optimized complex algorithms reducing calculation time from 4 hours to 30 minutes
+- Engineered data processing pipelines using PySpark and AWS Glue handling 100+ GBs daily
+- Processed holdings and P&L calculations for millions of users with high accuracy
+- Performed database optimizations handling 200+ million API calls per day with minimal latency
+
+**Unified Portfolio Innovation**
+- Developed "Super Portfolio" consolidating SGB, Mutual Funds, SmallCase, Advisory, and Equity portfolios
+- Created unified user experience resulting in 45% improvement in Net Promoter Score (NPS)
+- Integrated multiple financial instruments into single, coherent portfolio management system
+
+**Production Operations & DevOps**
+- Established comprehensive data restore policies and log backup systems
+- Implemented monitoring and alerting using Prometheus, Grafana, and Graylog
+- Actively participated in on-call schedules managing deployments, production issues, and client support
+- Built robust observability infrastructure ensuring system reliability and performance
+
+**Technical Stack:** AWS (Glue, SNS, SQS, Step Functions, Lambda, S3, ECS, Aurora DB, EventBridge, AppConfig, Secrets Manager), PySpark, Golang, Python, Docker, Kafka, Redis, Graylog, Grafana, Microservices
+
+### Goldman Sachs - Software Engineer (July 2020 – February 2022)
+
+**Third-Party Risk Management Engineering**
+- Core member of TPRM team managing critical vendor onboarding applications (KY3P, VRP)
+- Developed and maintained in-house applications for vendor risk assessment, contracting, and compliance
+- Built comprehensive vendor management workflows serving global Goldman Sachs operations
+
+**Enterprise Application Modernization**
+- Improved application efficiency through batch job implementations consolidating data from multiple sources
+- Exposed consolidated data through REST APIs and PURE browser (Goldman Sachs in-house application)
+- Led migration of on-premises applications to AWS cloud infrastructure
+- Modernized legacy entitlement systems handling authentication and authorization mechanisms
+
+**Innovation & Process Automation**
+- **Winner of Goldman Sachs India Engineering Hackathon 2021**
+- Designed revolutionary workflow-based automation reducing complex business processes from 2 months to days
+- Created solution impacting multiple divisions and teams across the organization
+- Demonstrated exceptional problem-solving and innovation capabilities
+
+**Technical Stack:** Java (Core), Multithreading, Dropwizard, Hibernate, Mockito, Spring Boot, Machine Learning, Workflow Automation, DB2, GitLab, PURE, BPMN, Microservices, Event-Driven Architecture, Python, SQL, NoSQL Database
+
+## Research & Internship Experience
+
+### ISI Kolkata (Machine Intelligence Unit) - Research Intern (May 2019 - June 2019)
+
+**Advanced Stock Prediction Research**
+- Conducted cutting-edge research on "Intraday Stock Recommender System"
+- Implemented Recurrent Neural Networks (RNN) with LSTM for sophisticated stock price prediction
+- Innovated by introducing inter-company dependencies improving model training efficiency
+- Developed clustering algorithms with top-k recommendations for pattern-based stock suggestions
+- Published findings contributing to financial machine learning research
+
+### E-Connect Solutions Pvt. Ltd. - Software Engineer Intern (May 2018 – June 2018)
+
+**Full-Stack Web Application Development**
+- Designed and developed "Complaint Handling System" for automated complaint management
+- Created intelligent area-based complaint routing to appropriate vendors
+- Built comprehensive frontend web forms with intuitive user interface
+- Implemented robust backend architecture with complete database design and setup
+- Delivered end-to-end solution from requirements gathering to deployment
+
+## Technical Expertise & Skills
+
+### Programming Languages
+- **Golang:** Advanced expertise in high-performance backend development, microservices, concurrent programming
+- **Python:** Extensive experience with Django, data processing, machine learning, automation scripts
+- **Java:** Strong foundation in core Java, Spring Boot, enterprise application development
+- **SQL:** Advanced database design, query optimization, stored procedures, performance tuning
+
+### Cloud & Infrastructure (AWS)
+- **Compute:** Lambda Functions, ECS, EC2, Step Functions
+- **Storage:** S3, Aurora DB, PostgreSQL, ElastiCache
+- **Messaging:** SNS, SQS, EventBridge, Kafka
+- **Security:** Secrets Manager, AppConfig, IAM, S3 Encryption
+- **Analytics:** Glue Jobs, PySpark, Data Processing Pipelines
+- **Monitoring:** CloudWatch, Prometheus, Grafana
+
+### Frameworks & Technologies
+- **Backend:** Django, Spring Boot, Dropwizard, Microservices Architecture
+- **Data Processing:** PySpark, Apache Kafka, Redis
+- **Machine Learning:** TensorFlow, Scikit-learn, Keras, Neural Networks (ANN, RNN, CNN, LSTM)
+- **DevOps:** Docker, Jenkins, Git, BitBucket, GitLab
+- **Monitoring:** Grafana, Prometheus, Graylog, AWS CloudWatch
+- **Databases:** PostgreSQL, MySQL, Redis, Aurora DB, SQL Server, DB2, NoSQL
+
+### Specialized Skills
+- **Event-Driven Architecture:** Design and implementation of scalable event-driven systems
+- **Multithreading & Concurrency:** Advanced concurrent programming and race condition handling
+- **Performance Optimization:** Algorithm optimization, caching strategies, database tuning
+- **System Design:** Large-scale distributed systems, high-availability architecture
+- **Machine Learning:** Deep learning, time series analysis, recommendation systems, anomaly detection
+
+## Notable Projects & Achievements
+
+### Machine Learning & AI Projects
+
+**House Price Prediction Using Neural Networks**
+- Researched novel interpolating polynomial techniques for neural network weight initialization
+- Compared performance against Vanilla Neural Networks, SVM, and Least Square Fitting
+- Achieved superior prediction accuracy through innovative mathematical approaches
+- **Technologies:** Python, Keras, Deep Learning, Advanced Mathematics
+
+**Intelligent Web Crawler**
+- Developed sophisticated web crawler for comprehensive website analysis
+- Implemented HTML content scanning and intelligent hyperlink traversal
+- Built scalable architecture for large-scale web data extraction
+- **Technologies:** Python, Web Scraping, Data Processing
+
+**Comprehensive Deep Learning Portfolio**
+- **Regression Prediction Models:** Advanced neural networks for numerical prediction tasks
+- **Time Series Analysis:** Anomaly detection and trend analysis for financial data
+- **Autoencoders:** Dimensionality reduction and feature learning implementations
+- **Image Classification:** CNN-based computer vision applications
+- **Technologies:** Scikit-learn, TensorFlow, ANN, RNN, CNN, Advanced ML Models
+
+### Business Impact Achievements
+
+**Revenue Generation**
+- **₹50+ Cr Annual Revenue:** Recommendation systems at Angel One
+- **₹5.7 Cr Growth:** Fixed Deposit portfolio optimization at INDMONEY (57% increase)
+- **78.6% Acquisition Increase:** FD customer acquisition through technical improvements
+
+**Performance Excellence**
+- **200M+ API Calls Daily:** High-throughput system optimization
+- **4 Hours → 30 Minutes:** Algorithm optimization for data processing
+- **80% Problem Reduction:** Application modernization impact
+- **45% NPS Improvement:** User experience enhancement through unified portfolios
+
+**Scale & Reliability**
+- **20M+ Users Served:** Real-time portfolio management systems
+- **100+ GB Daily Processing:** Big data pipeline optimization
+- **99.9% Uptime:** Disaster recovery and high-availability implementations
+
+## Current Focus & Innovation
+
+### Strategic Initiatives at INDMONEY
+- **Advanced Banking Integrations:** Next-generation payment gateway optimizations
+- **AI-Driven Personalization:** Machine learning applications for investment recommendations
+- **Regulatory Compliance:** Cutting-edge security frameworks and data protection
+- **Scalable Architecture:** Cloud-native solutions for rapidly growing user base
+
+### Emerging Technology Exploration
+- **Blockchain Integration:** Exploring decentralized finance (DeFi) applications
+- **Advanced AI/ML:** Large language models for financial advisory automation
+- **Cloud-Native Architecture:** Serverless computing and edge computing optimization
+- **Real-Time Analytics:** Stream processing for instantaneous financial insights
+
+## Recognition & Leadership
+
+- **Goldman Sachs India Engineering Hackathon Winner 2021:** Recognized for innovative workflow automation
+- **Technical Leadership:** Led multiple cross-functional teams and mentored junior engineers
+- **Open Source Contributions:** Active contributor to various open-source projects
+- **Industry Speaker:** Presented at internal tech talks and engineering forums
+
+## Education & Continuous Learning
+
+**Integrated Master of Science, Mathematics**  
+National Institute of Technology, Rourkela | June 2015 - June 2020
+
+**Continuous Professional Development**
+- Advanced Cloud Architecture Certifications
+- Machine Learning and AI Specializations
+- Financial Technology and RegTech Training
+- Leadership and Management Development Programs
+
+## Let's Connect & Collaborate
+
+I'm passionate about solving complex engineering challenges, mentoring fellow engineers, and exploring innovative applications of technology in finance. Whether you're interested in discussing cutting-edge fintech solutions, system architecture at scale, or collaborative opportunities, I'd love to connect.
+
+**Professional Inquiries:** sandeep10198@gmail.com  
+**Direct Contact:** +91-8093589961  
+**LinkedIn:** [Professional Network](https://linkedin.com/in/sandeep-mehta)  
+**GitHub:** [Code Portfolio](https://github.com/sandeep-mehta)  
+**Medium:** [Technical Articles](https://medium.com/@sandeep-mehta)
+
+---
+
+*"Building scalable systems that drive meaningful business impact while pushing the boundaries of what's possible with modern technology."*
+
+### Available for:
+- **Technical Consulting:** Architecture reviews, performance optimization, system design
+- **Speaking Engagements:** Fintech innovation, scalable systems, career development
+- **Mentorship:** Guiding junior engineers and career transition support
+- **Collaboration:** Open source contributions and innovative project partnerships
