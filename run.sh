@@ -63,6 +63,15 @@ verify_node() {
     echo "npm version: $(npm --version)"
 }
 
+# Function to check if we're in a production environment
+is_production() {
+    if [ "$NODE_ENV" = "production" ] || [ "$CI" = "true" ] || [ "$RENDER" = "true" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # Main script execution
 echo "Detecting operating system..."
 OS=$(detect_os)
@@ -75,6 +84,13 @@ verify_node
 echo "Installing project dependencies..."
 npm install
 
-# Start the development server
-echo "Starting development server..."
-npm start 
+# Start the development server or build for production
+if is_production; then
+    echo "Building for production..."
+    npm run build
+    echo "Starting production server..."
+    npm run preview
+else
+    echo "Starting development server..."
+    npm run dev
+fi 
