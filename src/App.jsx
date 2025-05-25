@@ -139,20 +139,40 @@ export default function App() {
       <div className="main-bg" style={{ paddingTop: '5.5rem' }}>
         {activeTab === 'about' && (
           <section id="about" className="about-section">
-            <div className="container">
-              <img src="/Profile.jpg" alt="Profile" className="profile-pic" />
-              <h2>About Me</h2>
-              <p><b>Professional Summary:</b> I am a Principal Software Engineer with 4+ years of experience architecting and developing large-scale fintech solutions that serve millions of users and drive significant business growth. Currently leading engineering initiatives at INDMONEY, I specialize in building high-performance backend systems, implementing complex financial integrations, and transforming technical challenges into measurable business outcomes.</p>
-              <p>My journey spans across prestigious organizations including INDMONEY, Angel One, and Goldman Sachs, where I've consistently delivered solutions that handle billions in financial transactions, optimize critical business processes, and enhance customer experiences at scale.</p>
-              <p><b>Background:</b> My passion for technology began during my Integrated Master of Science in Mathematics at NIT Rourkela (2015-2020), where I developed a strong analytical foundation that continues to shape my approach to complex software engineering challenges. This mathematical background has been instrumental in my success with algorithmic optimization, data processing, and machine learning applications.</p>
-              <p>I thrive at the intersection of cutting-edge technology and real-world business impact. Whether it's reducing calculation times from hours to minutes, building recommendation systems that generate millions in revenue, or architecting systems that serve 20+ million users daily, I'm driven by the opportunity to solve problems that matter.</p>
-              <p><b>Current Focus:</b> Advanced banking integrations, AI-driven personalization, regulatory compliance, scalable architecture, and emerging technologies like blockchain and real-time analytics.</p>
+            <div className="section-container about-card">
+              <div className="cover-photo-banner">
+                <img src="/Profile.jpg" alt="Profile" className="profile-pic" />
+              </div>
+              <div className="about-content">
+                <h2>About Me</h2>
+                <p>
+                  <b>Principal Software Engineer</b> with 5 years of experience designing and building large-scale fintech solutions that serve millions of users and drive measurable business growth. Currently leading engineering initiatives at INDMONEY, I specialize in high-performance backend systems, complex financial integrations, and transforming technical challenges into business value.
+                </p>
+                <p>
+                  My journey spans top organizations including INDMONEY, Angel One, and Goldman Sachs, where I've delivered solutions handling billions in transactions, optimized critical business processes, and enhanced customer experiences at scale.
+                </p>
+                <p>
+                  <b>Key strengths:</b>
+                </p>
+                <ul style={{marginBottom: '1.1rem', color: '#f7f7f7', paddingLeft: '1.2rem'}}>
+                  <li>Architecting scalable, high-availability distributed systems</li>
+                  <li>Performance optimization, big data processing, and observability</li>
+                  <li>Machine learning, recommendation systems, and analytics</li>
+                  <li>Leading cross-functional teams and mentoring engineers</li>
+                </ul>
+                <p>
+                  My background in mathematics (Integrated MSc, NIT Rourkela) shapes my approach to complex engineering challenges, algorithmic optimization, and data-driven solutions.
+                </p>
+                <p>
+                  I thrive at the intersection of technology and business impact—whether it's reducing processing times from hours to minutes, building systems that serve 20M+ users daily, or launching products that generate millions in revenue.
+                </p>
+              </div>
             </div>
           </section>
         )}
         {activeTab === 'experience' && (
           <section id="experience" className="experience-section">
-            <div className="container">
+            <div className="section-container">
               <h2>Past Experience</h2>
               <div className="experience-list">
                 {/* INDMONEY */}
@@ -206,7 +226,7 @@ export default function App() {
         )}
         {activeTab === 'internships' && (
           <section id="internships" className="projects-section">
-            <div className="container">
+            <div className="section-container">
               <h2>Internships</h2>
               <div className="experience-list">
                 <div className="experience-item">
@@ -238,7 +258,7 @@ export default function App() {
         )}
         {activeTab === 'projects' && (
           <section id="projects" className="projects-section">
-            <div className="container">
+            <div className="section-container">
               <h2>Personal Projects</h2>
               <div className="projects-grid">
                 {/* Go-Balance */}
@@ -361,7 +381,7 @@ export default function App() {
         )}
         {activeTab === 'contact' && (
           <section id="contact" className="contact-section">
-            <div className="container">
+            <div className="section-container">
               <h2>Contact</h2>
               <p>I'm passionate about solving complex engineering challenges, mentoring fellow engineers, and exploring innovative applications of technology in finance. Whether you're interested in discussing cutting-edge fintech solutions, system architecture at scale, or collaborative opportunities, I'd love to connect.</p>
               <ul className="contact-list" style={{ listStyle: 'none', padding: 0, fontSize: '1.1rem', maxWidth: 420, margin: '2rem auto 1.5rem auto' }}>
