@@ -129,9 +129,9 @@ export default function App() {
           <div className="logo">SM</div>
           <nav className="tab-nav">
             <button type="button" className={activeTab === 'about' ? 'tab-active' : ''} onClick={() => setActiveTab('about')}>About</button>
-            <button type="button" className={activeTab === 'experience' ? 'tab-active' : ''} onClick={() => setActiveTab('experience')}>Past Experience</button>
+            <button type="button" className={activeTab === 'experience' ? 'tab-active' : ''} onClick={() => setActiveTab('experience')}>Work Experience</button>
             <button type="button" className={activeTab === 'internships' ? 'tab-active' : ''} onClick={() => setActiveTab('internships')}>Internships</button>
-            <button type="button" className={activeTab === 'projects' ? 'tab-active' : ''} onClick={() => setActiveTab('projects')}>Personal Projects</button>
+            <button type="button" className={activeTab === 'projects' ? 'tab-active' : ''} onClick={() => setActiveTab('projects')}>Code Projects</button>
             <button type="button" className={activeTab === 'contact' ? 'tab-active' : ''} onClick={() => setActiveTab('contact')}>Contact</button>
           </nav>
         </div>
@@ -173,7 +173,7 @@ export default function App() {
         {activeTab === 'experience' && (
           <section id="experience" className="experience-section">
             <div className="section-container">
-              <h2>Past Experience</h2>
+              <h2>Work Experience</h2>
               <div className="experience-list">
                 {/* INDMONEY */}
                 <div className="experience-item">
@@ -194,7 +194,7 @@ export default function App() {
                 <div className="experience-item">
                   <img src="/angelone.webp" alt="Angel One" className="exp-logo" />
                   <div>
-                    <h3>Angel One <span style={{fontWeight:400}}>- Senior Software Engineer (SDE-2) & Software Engineer (SDE-1) (Feb 2022 – Sep 2024)</span></h3>
+                    <h3>Angel One <span style={{fontWeight:400}}>- Senior Software Engineer (SDE-2) (Feb 2022 – Sep 2024)</span></h3>
                     <ul>
                       <li>Modernized and migrated core trading and portfolio systems from legacy stacks to Golang and PySpark, significantly improving system performance, reliability, and maintainability for 20M+ users.</li>
                       <li>Developed and launched an AI-powered recommendations engine, driving ₹50 Cr+ in annual revenue and enhancing user engagement through intelligent stock discovery and personalized advisory.</li>
@@ -259,7 +259,7 @@ export default function App() {
         {activeTab === 'projects' && (
           <section id="projects" className="projects-section">
             <div className="section-container">
-              <h2>Personal Projects</h2>
+              <h2>Code Projects</h2>
               <div className="projects-grid">
                 {/* Go-Balance */}
                 <div className="project-card">
@@ -385,39 +385,68 @@ export default function App() {
               <h2>Contact</h2>
               <p>I'm passionate about solving complex engineering challenges, mentoring fellow engineers, and exploring innovative applications of technology in finance. Whether you're interested in discussing cutting-edge fintech solutions, system architecture at scale, or collaborative opportunities, I'd love to connect.</p>
               <ul className="contact-list" style={{ listStyle: 'none', padding: 0, fontSize: '1.1rem', maxWidth: 420, margin: '2rem auto 1.5rem auto' }}>
-                <li>
-                  <span className="contact-icon" aria-label="email">
-                    <GmailIcon />
-                  </span>
-                  <b>Email:</b> <a href="mailto:sandeep10198@gmail.com">sandeep10198@gmail.com</a>
+                <li className="social-icons">
+                  <a href="https://www.linkedin.com/in/sandeep-mehta-733521119/" target="_blank" rel="noopener noreferrer" className="contact-icon" aria-label="linkedin">
+                    <LinkedInIcon />
+                  </a>
+                  <a href="https://github.com/CpBruceMeena" target="_blank" rel="noopener noreferrer" className="contact-icon" aria-label="github">
+                    <GitHubIcon />
+                  </a>
+                  <a href="https://medium.com/@sandeep10198" target="_blank" rel="noopener noreferrer" className="contact-icon" aria-label="medium">
+                    <MediumIcon />
+                  </a>
                 </li>
-                <li>
+                <li className="contact-item">
                   <span className="contact-icon" aria-label="phone">
                     <PhoneIcon />
                   </span>
-                  <b>Phone:</b> <a href="tel:+918093589961">+91-8093589961</a>
+                  <a href="tel:+918093589961" className="contact-value">+91-8093589961</a>
                 </li>
-                <li>
-                  <span className="contact-icon" aria-label="linkedin">
-                    <LinkedInIcon />
+                <li className="contact-item">
+                  <span className="contact-icon" aria-label="email">
+                    <GmailIcon />
                   </span>
-                  <b>LinkedIn:</b> <a href="https://linkedin.com/in/sandeep-mehta" target="_blank" rel="noopener noreferrer">linkedin.com/in/sandeep-mehta</a>
-                </li>
-                <li>
-                  <span className="contact-icon" aria-label="github">
-                    <GitHubIcon />
-                  </span>
-                  <b>GitHub:</b> <a href="https://github.com/sandeep-mehta" target="_blank" rel="noopener noreferrer">github.com/sandeep-mehta</a>
-                </li>
-                <li>
-                  <span className="contact-icon" aria-label="medium">
-                    <MediumIcon />
-                  </span>
-                  <b>Medium:</b> <a href="https://medium.com/@sandeep-mehta" target="_blank" rel="noopener noreferrer">medium.com/@sandeep-mehta</a>
+                  <a href="mailto:sandeep10198@gmail.com" className="contact-value">sandeep10198@gmail.com</a>
                 </li>
               </ul>
-              <div style={{ marginTop: '1.5rem', fontStyle: 'italic', color: '#e9c46a', textAlign: 'center' }}>
-                "Building scalable systems that drive meaningful business impact while pushing the boundaries of what's possible with modern technology."
+              <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                <a 
+                  href="/Sandeep Mehta.pdf" 
+                  download 
+                  className="download-resume-btn"
+                  style={{
+                    display: 'inline-block',
+                    padding: '0.8rem 1.5rem',
+                    backgroundColor: 'var(--saffron)',
+                    color: 'var(--charcoal)',
+                    textDecoration: 'none',
+                    borderRadius: '0.5rem',
+                    fontWeight: '500',
+                    transition: 'transform 0.2s, background-color 0.2s',
+                    boxShadow: '0 4px 16px 0 rgba(44, 62, 80, 0.10)'
+                  }}
+                  onMouseOver={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.backgroundColor = '#f4a261';
+                  }}
+                  onMouseOut={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.backgroundColor = 'var(--saffron)';
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.transform = 'translateY(-2px)';
+                    e.target.style.backgroundColor = '#f4a261';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.backgroundColor = 'var(--saffron)';
+                  }}
+                >
+                  Download Resume
+                </a>
+              </div>
+              <div style={{ marginTop: '1.5rem', fontStyle: 'italic', color: '#e9c46a', textAlign: 'center', fontSize: '1.1rem' }}>
+                "The things that are easy to do are also easy not to do, that's the difference between success and failure."
               </div>
             </div>
           </section>
