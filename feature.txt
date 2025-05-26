@@ -1,622 +1,74 @@
-# Portfolio Website Redesign Implementation Guide
+# Portfolio Formatting Changes - Work Experience Section
 
-## Overview
-This guide outlines the complete redesign of Sandeep Mehta's portfolio website to minimize scrolling, improve user experience, and implement a cohesive color scheme with tabbed navigation.
+## Issues Identified
 
-## Design Philosophy
-- **Minimize Scrolling**: Use tabbed interface for content organization
-- **Professional Focus**: Remove testimonials, focus on technical achievements
-- **Cohesive Color Scheme**: Implement the provided 5-color palette consistently
-- **Card-Based Layout**: Display work experience in digestible card format
+Comparing the Internships and Work Experience sections, the following formatting inconsistencies were found:
 
-## Color Palette Implementation
+### 1. Card Container Styling
+- **Current Issue**: Work Experience section has sharp/square corners
+- **Required Change**: Apply rounded corners to match Internships section styling
 
-### Primary Colors
+### 2. Spacing and Layout
+- **Current Issue**: Different spacing between company entries and inconsistent padding
+- **Required Change**: Match the spacing used in Internships section
+
+### 3. Content Container
+- **Current Issue**: Work Experience entries appear to have different background styling
+- **Required Change**: Apply consistent background and border styling
+
+## Specific CSS/Styling Changes Required
+
+### For Work Experience Section Container:
 ```css
-:root {
-  --charcoal: #264653;
-  --persian-green: #2a9d8f;
-  --saffron: #e9c46a;
-  --sandy-brown: #f4a261;
-  --burnt-sienna: #e76f51;
-  
-  /* Semantic Color Assignments */
-  --primary-bg: var(--charcoal);
-  --secondary-bg: var(--persian-green);
-  --accent-primary: var(--saffron);
-  --accent-secondary: var(--sandy-brown);
-  --highlight: var(--burnt-sienna);
-  
-  /* Text Colors */
-  --text-primary: #ffffff;
-  --text-secondary: #f8f9fa;
-  --text-accent: var(--charcoal);
+/* Apply same styling as Internships section */
+.work-experience-container {
+    border-radius: 12px; /* Match curved corners */
+    background: rgba(255, 255, 255, 0.05); /* Match background opacity */
+    padding: 24px; /* Match padding */
+    margin-bottom: 32px; /* Match margin spacing */
 }
 ```
 
-### Color Usage Strategy
-- **Charcoal (#264653)**: Primary background, navigation
-- **Persian Green (#2a9d8f)**: Secondary backgrounds, active states
-- **Saffron (#e9c46a)**: Card backgrounds, content areas
-- **Sandy Brown (#f4a261)**: Interactive elements, buttons
-- **Burnt Sienna (#e76f51)**: Call-to-action buttons, highlights
-
-## New Site Structure
-
-### 1. Header Section (Fixed)
-```
-┌─────────────────────────────────────────────┐
-│ SM    [About] [Experience] [Skills] [Contact]│
-│                              [Let's Talk] ──┤
-└─────────────────────────────────────────────┘
-```
-
-### 2. Hero Section (Minimal)
-- Profile image (circular)
-- Name and title
-- One-line value proposition
-- Quick action buttons
-
-### 3. Tabbed Content Area
-Four main tabs replacing the current scrolling sections:
-
-#### Tab 1: About
-- Professional summary (condensed)
-- Key achievements metrics
-- Current focus areas
-
-#### Tab 2: Experience
-- Work experience cards
-- Each company as a separate card
-- Key projects and impact
-
-#### Tab 3: Skills & Projects
-- Technical skills categorized
-- Featured projects with tech stack
-- Performance improvements achieved
-
-#### Tab 4: Contact
-- Simplified contact form
-- Professional links
-- Availability status
-
-## Detailed Implementation Plan
-
-### Phase 1: Structure & Navigation
-
-#### 1.1 Update Header Navigation
-```html
-<header class="fixed-header">
-  <div class="nav-container">
-    <div class="logo">SM</div>
-    <nav class="main-nav">
-      <button class="nav-tab active" data-tab="about">About</button>
-      <button class="nav-tab" data-tab="experience">Experience</button>
-      <button class="nav-tab" data-tab="skills">Skills</button>
-      <button class="nav-tab" data-tab="contact">Contact</button>
-    </nav>
-    <button class="cta-button">Let's Talk</button>
-  </div>
-</header>
-```
-
-#### 1.2 Hero Section Redesign
-```html
-<section class="hero-section">
-  <div class="hero-content">
-    <img src="profile.jpg" alt="Sandeep Mehta" class="profile-image">
-    <h1>Sandeep Mehta</h1>
-    <h2>Principal Software Engineer</h2>
-    <p>Building scalable fintech solutions handling billions in transactions</p>
-    <div class="hero-actions">
-      <button class="btn-primary">View Experience</button>
-      <button class="btn-secondary">Download Resume</button>
-    </div>
-  </div>
-</section>
-```
-
-### Phase 2: Tabbed Content Implementation
-
-#### 2.1 Tab Container Structure
-```html
-<main class="content-container">
-  <div class="tab-content active" id="about-tab">
-    <!-- About content -->
-  </div>
-  <div class="tab-content" id="experience-tab">
-    <!-- Experience cards -->
-  </div>
-  <div class="tab-content" id="skills-tab">
-    <!-- Skills and projects -->
-  </div>
-  <div class="tab-content" id="contact-tab">
-    <!-- Contact information -->
-  </div>
-</main>
-```
-
-#### 2.2 Experience Cards Design
-```html
-<div class="experience-grid">
-  <div class="company-card">
-    <div class="company-header">
-      <img src="indmoney-logo.png" alt="INDMONEY" class="company-logo">
-      <div class="company-info">
-        <h3>INDMONEY</h3>
-        <p class="position">Principal Software Engineer</p>
-        <p class="duration">2022 - Present</p>
-      </div>
-    </div>
-    <div class="achievements">
-      <div class="achievement-item">
-        <span class="metric">2M+</span>
-        <span class="label">Active Users</span>
-      </div>
-      <div class="achievement-item">
-        <span class="metric">200%</span>
-        <span class="label">User Growth</span>
-      </div>
-      <div class="achievement-item">
-        <span class="metric">99.9%</span>
-        <span class="label">Uptime</span>
-      </div>
-    </div>
-    <div class="tech-stack">
-      <span class="tech-tag">Java</span>
-      <span class="tech-tag">Spring Boot</span>
-      <span class="tech-tag">AWS</span>
-    </div>
-    <p class="company-description">
-      Leading engineering initiatives for banking platform integration and system architecture.
-    </p>
-  </div>
-  
-  <!-- Repeat for Angel One and Goldman Sachs -->
-</div>
-```
-
-### Phase 3: Styling Implementation
-
-#### 3.1 Base Styles
+### For Individual Experience Cards:
 ```css
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.experience-card {
+    margin-bottom: 48px; /* Match spacing between entries */
+    padding: 20px; /* Consistent internal padding */
 }
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--primary-bg);
-  color: var(--text-primary);
-  line-height: 1.6;
-}
-
-/* Header Styles */
-.fixed-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: rgba(38, 70, 83, 0.95);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  padding: 1rem 0;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--accent-primary);
-}
-
-.main-nav {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-tab {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-}
-
-.nav-tab:hover,
-.nav-tab.active {
-  background: var(--secondary-bg);
-  color: var(--text-primary);
-}
-
-.cta-button {
-  background: var(--highlight);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #d85d43;
+.experience-card:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last item */
 }
 ```
 
-#### 3.2 Hero Section Styles
+### For Company Logo/Icon Container:
 ```css
-.hero-section {
-  margin-top: 80px; /* Account for fixed header */
-  padding: 4rem 2rem;
-  text-align: center;
-  background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
-}
-
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.profile-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-bottom: 1.5rem;
-  border: 4px solid var(--accent-primary);
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-  color: var(--text-primary);
-}
-
-.hero-content h2 {
-  font-size: 1.5rem;
-  color: var(--accent-primary);
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  margin-bottom: 2rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  background: var(--accent-secondary);
-  color: var(--text-accent);
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #e8955a;
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--accent-primary);
-  border: 2px solid var(--accent-primary);
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background: var(--accent-primary);
-  color: var(--text-accent);
+.company-logo-container {
+    border-radius: 8px; /* Match rounded corners for logo containers */
+    background: rgba(255, 255, 255, 0.1); /* Consistent background */
+    padding: 12px; /* Match padding */
 }
 ```
 
-#### 3.3 Tab Content Styles
-```css
-.content-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
+## Visual Consistency Checklist
 
-.tab-content {
-  display: none;
-  min-height: 60vh;
-  padding: 2rem 0;
-}
+- [ ] Apply rounded corners (border-radius: 12px) to main Work Experience container
+- [ ] Ensure consistent spacing between INDMONEY and Angel One entries (48px margin-bottom)
+- [ ] Match the background styling and opacity used in Internships section
+- [ ] Verify padding consistency within each experience entry
+- [ ] Ensure company logo containers have rounded corners
+- [ ] Check that the overall section follows the same visual hierarchy as Internships
 
-.tab-content.active {
-  display: block;
-}
+## Implementation Priority
 
-/* Experience Cards */
-.experience-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-}
+1. **High Priority**: Container rounded corners and background styling
+2. **Medium Priority**: Spacing consistency between entries
+3. **Low Priority**: Fine-tuning padding and margin adjustments
 
-.company-card {
-  background: var(--accent-primary);
-  color: var(--text-accent);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
+## Testing Notes
 
-.company-card:hover {
-  transform: translateY(-4px);
-}
-
-.company-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.company-logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 8px;
-  margin-right: 1rem;
-}
-
-.company-info h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.25rem;
-}
-
-.position {
-  font-weight: 500;
-  color: var(--primary-bg);
-}
-
-.duration {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-.achievements {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  background: rgba(38, 70, 83, 0.1);
-  border-radius: 8px;
-}
-
-.achievement-item {
-  text-align: center;
-}
-
-.metric {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary-bg);
-}
-
-.label {
-  font-size: 0.8rem;
-  opacity: 0.8;
-}
-
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.tech-tag {
-  background: var(--secondary-bg);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-}
-
-.company-description {
-  line-height: 1.6;
-  opacity: 0.9;
-}
-```
-
-### Phase 4: JavaScript Functionality
-
-#### 4.1 Tab Switching Logic
-```javascript
-// Tab switching functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const tabButtons = document.querySelectorAll('.nav-tab');
-  const tabContents = document.querySelectorAll('.tab-content');
-  
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Remove active class from all tabs
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      tabContents.forEach(content => content.classList.remove('active'));
-      
-      // Add active class to clicked tab
-      button.classList.add('active');
-      const targetTab = document.getElementById(`${button.dataset.tab}-tab`);
-      targetTab.classList.add('active');
-    });
-  });
-});
-```
-
-#### 4.2 Smooth Scrolling and Animations
-```javascript
-// Add smooth animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, observerOptions);
-
-// Observe all cards
-document.querySelectorAll('.company-card').forEach(card => {
-  card.style.opacity = '0';
-  card.style.transform = 'translateY(20px)';
-  card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  observer.observe(card);
-});
-```
-
-### Phase 5: Content Organization
-
-#### 5.1 About Tab Content
-- **Professional Summary**: 2-3 sentences highlighting expertise
-- **Key Metrics**: Years of experience, transactions handled, users served
-- **Current Focus**: Technologies and domains currently working on
-- **Education**: Integrated Master's from NIT Rourkela
-
-#### 5.2 Experience Tab Content
-Create individual cards for:
-1. **INDMONEY (2022-Present)**
-   - Principal Software Engineer
-   - Banking platform integration
-   - 2M+ users, 200% growth
-   - Tech: Java, Spring Boot, AWS
-
-2. **Angel One (Previous)**
-   - Performance optimization
-   - 60% faster execution
-   - Tech: Node.js, React, Kubernetes
-
-3. **Goldman Sachs (Previous)**
-   - Large-scale fintech solutions
-   - System reliability improvements
-   - Enterprise-level architecture
-
-#### 5.3 Skills Tab Content
-- **Technical Skills**: Categorized by type (Backend, Frontend, Cloud, etc.)
-- **Featured Projects**: 2-3 key projects with impact metrics
-- **Certifications**: Relevant industry certifications
-
-#### 5.4 Contact Tab Content
-- **Professional Email**: sandeep10198@gmail.com
-- **Phone**: +91-8093589961
-- **LinkedIn**: linkedin.com/in/sandeep-mehta
-- **GitHub**: github.com/sandeep-mehta
-- **Medium**: medium.com/@sandeep-mehta
-- **Availability**: Current status for new opportunities
-
-### Phase 6: Responsive Design
-
-#### 6.1 Mobile Optimization
-```css
-@media (max-width: 768px) {
-  .nav-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .main-nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-  }
-  
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-  
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .achievements {
-    flex-direction: column;
-    gap: 1rem;
-  }
-}
-```
-
-### Phase 7: Performance Optimization
-
-#### 7.1 Image Optimization
-- Use WebP format for images
-- Implement lazy loading
-- Optimize profile and company logos
-
-#### 7.2 CSS Optimization
-- Minimize unused CSS
-- Use CSS custom properties for consistency
-- Implement critical CSS for above-the-fold content
-
-#### 7.3 JavaScript Optimization
-- Minimize DOM queries
-- Use event delegation
-- Implement smooth transitions
-
-## Implementation Timeline
-
-### Week 1: Structure & Design
-- [ ] Create new HTML structure with tabs
-- [ ] Implement color palette CSS variables
-- [ ] Design and code hero section
-- [ ] Create tab navigation functionality
-
-### Week 2: Content & Cards
-- [ ] Design experience cards layout
-- [ ] Implement tab content sections
-- [ ] Add JavaScript for tab switching
-- [ ] Create responsive grid system
-
-### Week 3: Styling & Polish
-- [ ] Apply consistent color scheme
-- [ ] Add hover effects and transitions
-- [ ] Implement responsive design
-- [ ] Add loading animations
-
-### Week 4: Testing & Optimization
-- [ ] Cross-browser testing
-- [ ] Mobile responsiveness testing
-- [ ] Performance optimization
-- [ ] Final content review and deployment
-
-## Success Metrics
-- **Reduced Scrolling**: 80% reduction in page scroll length
-- **Improved Navigation**: Tab-based content discovery
-- **Visual Consistency**: Cohesive color scheme throughout
-- **Better UX**: Card-based information architecture
-- **Professional Focus**: Removal of non-essential testimonials
-
-This comprehensive redesign will transform the portfolio into a modern, professional, and user-friendly experience that effectively showcases technical expertise while minimizing cognitive load for visitors.
+After implementing changes:
+- Compare side-by-side with Internships section
+- Verify responsive behavior matches
+- Check that visual hierarchy remains consistent
+- Ensure readability is maintained across different screen sizes
