@@ -8,64 +8,6 @@ const COMPANY_LOGOS = [
   { name: 'Goldman Sachs', url: '/Goldman_Sachs.svg.png' },
 ];
 
-const quickStats = [
-  { label: 'Years Experience', value: 4 },
-  { label: 'Billions in Transactions', value: 2 },
-  { label: 'Users Served', value: 20 },
-  { label: 'Major Fintech Companies', value: 3 },
-];
-
-const whatIDo = [
-  {
-    icon: '🏗️',
-    title: 'System Architecture',
-    desc: 'Design scalable systems that serve millions',
-    cta: 'Learn More',
-    link: '#',
-  },
-  {
-    icon: '💰',
-    title: 'Fintech Solutions',
-    desc: 'Build trading & banking platforms that handle billions in volume',
-    cta: 'See Projects',
-    link: '#',
-  },
-  {
-    icon: '🚀',
-    title: 'Performance Optimization',
-    desc: 'Reduce processing times from hours to minutes',
-    cta: 'View Impact',
-    link: '#',
-  },
-];
-
-const featuredWork = [
-  {
-    img: '/indmoney-dashboard.png',
-    title: 'INDMONEY Integration',
-    desc: 'Banking platform serving 2M+ active users',
-    metrics: [
-      '📈 200% user growth',
-      '⚡ 99.9% uptime',
-    ],
-    tech: 'Java • Spring Boot • AWS',
-    cta: 'View Details',
-    link: '#',
-  },
-  {
-    img: '/angelone-dashboard.png',
-    title: 'Angel One Optimization',
-    desc: 'Reduced trade execution time by 60%',
-    metrics: [
-      '⏱️ 60% faster execution',
-      '🔒 Improved reliability',
-    ],
-    tech: 'Node.js • React • Kubernetes',
-    cta: 'See Results',
-    link: '#',
-  },
-];
-
 function useScrollAnimations() {
   useEffect(() => {
     const observerOptions = {
