@@ -89,7 +89,7 @@ if is_production; then
     echo "Building for production..."
     npm run build
     echo "Starting production server..."
-    npm run preview
+    npm start
 else
     echo "Starting development server..."
     npm run dev
