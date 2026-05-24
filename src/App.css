@@ -17,6 +17,7 @@
   --aurora-violet: #8c6cff;
   --signal-magenta: #ff6fd8;
   --starlight-gold: #ffd166;
+  --engine-orange: #ff8c42;
 
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-blur: blur(12px);
@@ -45,6 +46,316 @@ h1, h2, h3, h4, .display-font {
 
 code, .mono-font {
   font-family: 'JetBrains Mono', monospace;
+}
+
+/* ==================== GAME ELEMENTS ==================== */
+
+/* ==================== FORWARD FLIGHT EFFECTS ==================== */
+
+/* Hyperspace Lines - radial from center (forward flight feel) */
+.hyperspace-container {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hyperspace-line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--length, 120px);
+  height: var(--line-width, 1px);
+  background: linear-gradient(90deg, var(--cosmic-cyan) 0%, transparent 100%);
+  transform-origin: left center;
+  transform: translateY(-50%) rotate(var(--angle, 0deg));
+  opacity: 0;
+  animation: hyperspaceTrail var(--duration, 0.4s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  border-radius: 2px;
+}
+
+@keyframes hyperspaceTrail {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%) rotate(var(--angle, 0deg)) scaleX(0);
+  }
+  15% {
+    opacity: var(--line-opacity, 0.3);
+    transform: translateY(-50%) rotate(var(--angle, 0deg)) scaleX(1);
+  }
+  85% {
+    opacity: var(--line-opacity, 0.3);
+    transform: translateY(-50%) rotate(var(--angle, 0deg)) scaleX(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) rotate(var(--angle, 0deg)) scaleX(0.2);
+  }
+}
+
+/* Asteroid Field - rocks flying past */
+.asteroid-field {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.asteroid {
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asteroid svg {
+  filter: drop-shadow(0 0 2px rgba(105, 226, 255, 0.2));
+}
+
+/* Comet Shower - streaks at high velocity */
+.comet-field {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+.comet {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  transform-origin: left center;
+}
+
+.comet-head {
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, var(--starlight-gold) 40%, transparent 100%);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(255, 209, 102, 0.6);
+}
+
+.comet-tail {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--starlight-gold) 0%, rgba(255, 209, 102, 0.3) 50%, transparent 100%);
+  border-radius: 2px;
+  margin-left: -2px;
+}
+
+/* Crosshair reticle */
+.crosshair-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+}
+
+.crosshair-ring {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--cosmic-cyan);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+}
+
+.crosshair-dot {
+  width: 3px;
+  height: 3px;
+  background: var(--cosmic-cyan);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px var(--cosmic-cyan);
+}
+
+.crosshair-line {
+  position: absolute;
+  background: var(--cosmic-cyan);
+}
+
+.crosshair-top {
+  width: 1px;
+  height: 14px;
+  top: calc(50% - 28px);
+  left: 50%;
+  opacity: 0.4;
+}
+
+.crosshair-bottom {
+  width: 1px;
+  height: 14px;
+  top: calc(50% + 14px);
+  left: 50%;
+  opacity: 0.4;
+}
+
+.crosshair-left {
+  width: 14px;
+  height: 1px;
+  top: 50%;
+  left: calc(50% - 28px);
+  opacity: 0.4;
+}
+
+.crosshair-right {
+  width: 14px;
+  height: 1px;
+  top: 50%;
+  left: calc(50% + 14px);
+  opacity: 0.4;
+}
+
+.crosshair-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--cosmic-cyan);
+  border-style: solid;
+  opacity: 0.3;
+}
+
+.crosshair-tl {
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  border-width: 1px 0 0 1px;
+}
+
+.crosshair-tr {
+  top: calc(50% - 24px);
+  right: calc(50% - 24px);
+  border-width: 1px 1px 0 0;
+}
+
+.crosshair-bl {
+  bottom: calc(50% - 24px);
+  left: calc(50% - 24px);
+  border-width: 0 0 1px 1px;
+}
+
+.crosshair-br {
+  bottom: calc(50% - 24px);
+  right: calc(50% - 24px);
+  border-width: 0 1px 1px 0;
+}
+
+/* Spaceship Overlay - third-person view */
+.spaceship-overlay {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  pointer-events: none;
+  filter: drop-shadow(0 0 20px rgba(105, 226, 255, 0.3));
+}
+
+/* Thrust particles behind ship */
+.thrust-particles {
+  position: fixed;
+  bottom: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 39;
+  pointer-events: none;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.thrust-particle {
+  width: 2px;
+  height: 6px;
+  background: linear-gradient(to top, transparent, var(--engine-orange), var(--cosmic-cyan));
+  border-radius: 50%;
+}
+
+/* Energy Gate - section transitions */
+.energy-gate {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.energy-gate-ring {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid var(--cosmic-cyan);
+  opacity: 0.08;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: energyPulse 4s ease-in-out infinite;
+}
+
+.energy-gate-ring-outer {
+  width: 800px;
+  height: 800px;
+  opacity: 0.04;
+  animation: energyPulse 6s ease-in-out infinite reverse;
+  border-color: var(--starlight-gold);
+}
+
+@keyframes energyPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.08; }
+  50% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.15; }
+}
+
+/* About section monk logo avatar */
+.about-monk-avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 2px solid var(--border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cosmic-cyan);
+  transition: all 0.4s;
+  margin: 0 auto;
+}
+
+.about-monk-avatar:hover {
+  border-color: var(--cosmic-cyan);
+  box-shadow: 0 0 40px rgba(105, 226, 255, 0.3);
+  transform: scale(1.05);
+}
+
+/* HUD Distance text */
+.hud-distance {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  color: var(--starlight-gold);
+  letter-spacing: 0.1em;
 }
 
 /* ==================== PARALLAX UNIVERSE BACKGROUND ==================== */
@@ -481,6 +792,16 @@ code, .mono-font {
   border-color: var(--cosmic-cyan);
   box-shadow: 0 0 30px rgba(105, 226, 255, 0.3);
   transform: scale(1.05);
+}
+
+.yooboo-logo-wrapper {
+  border-color: rgba(232, 184, 75, 0.3);
+  background: rgba(26, 21, 18, 0.5);
+}
+
+.game-logo-display.yooboo-logo-wrapper:hover {
+  border-color: #E8B84B;
+  box-shadow: 0 0 40px rgba(232, 184, 75, 0.4);
 }
 
 /* ==================== HUD - HEADS UP DISPLAY ==================== */

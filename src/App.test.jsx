@@ -74,9 +74,9 @@ describe('Galaxy Atlas - Space Flight Portfolio', () => {
     expect(expLinks.length).toBeGreaterThanOrEqual(1);
   });
 
-  it('should show keyboard navigation hint', () => {
+  it('should show keyboard navigation hint for fly/brake/warp', () => {
     render(<App />, { wrapper: TestWrapper });
-    const hints = screen.getAllByText(/W \/ S/i);
+    const hints = screen.getAllByText(/W . Fly/i);
     expect(hints.length).toBeGreaterThanOrEqual(1);
   });
 
@@ -84,6 +84,8 @@ describe('Galaxy Atlas - Space Flight Portfolio', () => {
     render(<App />, { wrapper: TestWrapper });
     const velocityLabels = screen.getAllByText(/VELOCITY/i);
     expect(velocityLabels.length).toBeGreaterThanOrEqual(1);
+    // Also check for next waypoint label
+    expect(screen.getByText(/NEXT WAYPOINT/i)).toBeDefined();
   });
 
   it('should show the Yooboo game in games section', () => {
