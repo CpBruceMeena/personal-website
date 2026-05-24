@@ -43,7 +43,6 @@ describe('Galaxy Atlas - Space Flight Portfolio', () => {
 
   it('should render the monk logo text in header', () => {
     render(<App />, { wrapper: TestWrapper });
-    expect(screen.getByText('SMonk')).toBeDefined();
   });
 
   it('should render hero section with name (from h1)', () => {

@@ -763,7 +763,6 @@ export default function App() {
       >
         <div className="logo">
           <BoyMonkLogo size={32} />
-          <span className="logo-text">SMonk</span>
         </div>
         <nav className="nav-links">
           {SECTION_IDS.map((id) => (
@@ -788,7 +787,6 @@ export default function App() {
               transition={{ delay: 0.2 }}
               className="section-tag"
             >
-              System Online // LAUNCH BAY
             </motion.span>
 
             <motion.h1
@@ -956,7 +954,7 @@ export default function App() {
 
         <footer style={{ padding: '4rem 2rem', textAlign: 'center', borderTop: '1px solid var(--divider)' }}>
           <p className="mono-font" style={{ color: 'var(--faint-text)', fontSize: '0.8rem' }}>
-            © {new Date().getFullYear()} SANDEEP MEHTA // GALAXY ATLAS V3.2
+            © {new Date().getFullYear()} SANDEEP MEHTA
           </p>
         </footer>
       </main>
