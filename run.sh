@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# --- Colors ---
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 # Function to detect OS
 detect_os() {
     case "$(uname -s)" in
@@ -13,7 +19,7 @@ detect_os() {
 # Function to install Node.js based on OS
 install_node() {
     local os=$1
-    echo "Installing Node.js..."
+    echo -e "${YELLOW}Installing Node.js...${NC}"
     
     case $os in
         "macos")
@@ -31,16 +37,16 @@ install_node() {
                 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
                 sudo yum install -y nodejs
             else
-                echo "Unsupported Linux distribution. Please install Node.js manually."
+                echo -e "${RED}Unsupported Linux distribution. Please install Node.js manually.${NC}"
                 exit 1
             fi
             ;;
         "windows")
-            echo "Please install Node.js from https://nodejs.org/"
+            echo -e "${RED}Please install Node.js from https://nodejs.org/${NC}"
             exit 1
             ;;
         *)
-            echo "Unsupported operating system. Please install Node.js manually."
+            echo -e "${RED}Unsupported operating system. Please install Node.js manually.${NC}"
             exit 1
             ;;
     esac
@@ -49,48 +55,71 @@ install_node() {
 # Function to verify Node.js installation
 verify_node() {
     if ! command -v node &> /dev/null; then
-        echo "Node.js is not installed."
+        echo -e "${YELLOW}Node.js is not installed.${NC}"
         local os=$(detect_os)
         install_node $os
     fi
     
     if ! command -v npm &> /dev/null; then
-        echo "npm is not installed. Please install Node.js properly."
+        echo -e "${RED}npm is not installed. Please install Node.js properly.${NC}"
         exit 1
     fi
     
-    echo "Node.js version: $(node --version)"
-    echo "npm version: $(npm --version)"
+    echo -e "${GREEN}Node.js version: $(node --version)${NC}"
+    echo -e "${GREEN}npm version: $(npm --version)${NC}"
 }
 
-# Function to check if we're in a production environment
-is_production() {
-    if [ "$NODE_ENV" = "production" ] || [ "$CI" = "true" ] || [ "$RENDER" = "true" ]; then
-        return 0
-    else
-        return 1
-    fi
+# Function to kill existing processes on ports 4000 and 4001
+cleanup_ports() {
+    echo -e "${YELLOW}Cleaning up existing processes on ports 4000 and 4001...${NC}"
+    for port in 4000 4001; do
+        pid=$(lsof -ti :$port)
+        if [ -n "$pid" ]; then
+            echo "Killing process $pid on port $port"
+            kill -9 $pid 2>/dev/null
+        fi
+    done
+}
+
+# Cleanup function to kill background processes on exit
+cleanup_on_exit() {
+    echo -e "\n${YELLOW}Shutting down servers...${NC}"
+    kill $BACKEND_PID 2>/dev/null
+    exit
 }
 
 # Main script execution
+echo -e "${GREEN}Digital Universe Setup & Launch${NC}"
 echo "Detecting operating system..."
 OS=$(detect_os)
 echo "Operating system: $OS"
 
-# Verify and install Node.js if needed
+# Verify Node.js
 verify_node
 
-# Install project dependencies
-echo "Installing project dependencies..."
+# Port cleanup
+cleanup_ports
+
+# Install dependencies
+echo -e "${YELLOW}Installing project dependencies...${NC}"
 npm install
 
-# Start the development server or build for production
-if is_production; then
-    echo "Building for production..."
+# Set trap for cleanup
+trap cleanup_on_exit SIGINT SIGTERM
+
+# Start Backend Server
+echo -e "${GREEN}Starting Backend Server (port 4001)...${NC}"
+node server.js &
+BACKEND_PID=$!
+
+# Wait for backend to be ready
+sleep 2
+
+# Start Frontend
+echo -e "${GREEN}Starting Frontend Galaxy (port 4000)...${NC}"
+if [ "$NODE_ENV" = "production" ]; then
     npm run build
-    echo "Starting production server..."
-    npm start
+    npm run preview
 else
-    echo "Starting development server..."
     npm run dev
-fi 
+fi
