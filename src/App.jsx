@@ -72,8 +72,8 @@ export default function App() {
           <nav className="tab-nav">
             <button type="button" className={activeTab === 'about' ? 'tab-active' : ''} onClick={() => setActiveTab('about')}>About</button>
             <button type="button" className={activeTab === 'experience' ? 'tab-active' : ''} onClick={() => setActiveTab('experience')}>Work Experience</button>
-            <button type="button" className={activeTab === 'internships' ? 'tab-active' : ''} onClick={() => setActiveTab('internships')}>Internships</button>
             <button type="button" className={activeTab === 'projects' ? 'tab-active' : ''} onClick={() => setActiveTab('projects')}>Code Projects</button>
+            <button type="button" className={activeTab === 'internships' ? 'tab-active' : ''} onClick={() => setActiveTab('internships')}>Internships</button>
             <button type="button" className={activeTab === 'contact' ? 'tab-active' : ''} onClick={() => setActiveTab('contact')}>Contact</button>
           </nav>
         </div>
@@ -88,25 +88,26 @@ export default function App() {
               <div className="about-content">
                 <h2>About Me</h2>
                 <p>
-                  <b>Principal Software Engineer</b> with 5 years of experience designing and building large-scale fintech solutions that serve millions of users and drive measurable business growth. Currently leading engineering initiatives at INDMONEY, I specialize in high-performance backend systems, complex financial integrations, and transforming technical challenges into business value.
+                  <b>Principal Software Engineer</b> with 6+ years of experience designing and building large-scale fintech and AI products that serve millions of users and drive measurable business growth. Currently leading backend engineering at INDMONEY, I specialize in high-performance distributed systems, complex financial integrations, and cloud-native architectures.
                 </p>
                 <p>
-                  My journey spans top organizations including INDMONEY, Angel One, and Goldman Sachs, where I've delivered solutions handling billions in transactions, optimized critical business processes, and enhanced customer experiences at scale.
+                  My journey spans top organizations including INDMONEY, Angel One, and Goldman Sachs, where I've delivered solutions handling billions in transactions — from optimizing high-traffic trading applications processing 100+ GB daily to building AI-powered recommendation engines driving ₹50 Cr+ in annual revenue.
                 </p>
                 <p>
                   <b>Key strengths:</b>
                 </p>
                 <ul style={{marginBottom: '1.1rem', color: '#f7f7f7', paddingLeft: '1.2rem'}}>
-                  <li>Architecting scalable, high-availability distributed systems</li>
-                  <li>Performance optimization, big data processing, and observability</li>
-                  <li>Machine learning, recommendation systems, and analytics</li>
+                  <li>Architecting scalable, high-availability distributed systems on AWS</li>
+                  <li>Performance optimization, big data pipelines (PySpark, Kafka), and observability (Prometheus, Grafana)</li>
+                  <li>Microservices, event-driven architecture, and Backend-for-Frontend (BFF) patterns</li>
+                  <li>Machine learning applications, recommendation systems, and workflow automation</li>
                   <li>Leading cross-functional teams and mentoring engineers</li>
                 </ul>
                 <p>
-                  My background in mathematics (Integrated MSc, NIT Rourkela) shapes my approach to complex engineering challenges, algorithmic optimization, and data-driven solutions.
+                  My background in mathematics (Integrated MSc, NIT Rourkela) shapes my approach to complex engineering challenges, algorithmic optimization, and data-driven solutions. I'm also an active open-source contributor and builder — from production-ready Go frameworks to real-time multiplayer games.
                 </p>
                 <p>
-                  I thrive at the intersection of technology and business impact—whether it's reducing processing times from hours to minutes, building systems that serve 20M+ users daily, or launching products that generate millions in revenue.
+                  I thrive at the intersection of technology and business impact — whether it's reducing processing times from hours to minutes, building systems that serve 20M+ users daily, or launching products that generate millions in revenue. Winner of the Goldman Sachs India Engineering Hackathon 2021.
                 </p>
               </div>
             </div>
@@ -123,13 +124,13 @@ export default function App() {
                   <div>
                     <h3>INDMONEY <span style={{fontWeight:400}}>- Principal Software Engineer (Sep 2024 – Present)</span></h3>
                     <ul>
-                      <li>Led critical banking integrations (ICICI, Axis Bank LRS), enabling seamless international remittances and lending operations for millions of users.</li>
-                      <li>Managed the Fixed Deposit portfolio, driving a 78.6% increase in customer acquisition and 57% growth in investment value through data-driven optimizations and UI improvements.</li>
-                      <li>Established comprehensive security and compliance frameworks, including PII detection and S3 encryption, ensuring regulatory adherence and data protection.</li>
-                      <li>Pioneered Backend-for-Frontend (BFF) methodology, empowering backend-driven UI updates and reducing dependency on app releases for rapid feature deployment.</li>
-                      <li>Streamlined development velocity by improving deployment processes and fostering collaboration across mobile and web engineering teams.</li>
+                      <li>Spearheaded multiple remittance integrations for US stocks, including ICICI Bank LRS gateway, IDFC Bank, and Federal Bank (onboarding, account creation, withdrawal) — enabling seamless international transactions for millions of users.</li>
+                      <li>Led the first phase of the Income Tax Return (ITR) project end-to-end, from backend development through to mobile display, enabling in-app tax filing for users.</li>
+                      <li>Enhanced FD application journeys (KYC and payments), driving a 57% increase in monthly investment value (from ₹10 Cr to ₹15.7 Cr) through data-driven optimizations.</li>
+                      <li>Established a PII (Personally Identifiable Information) detection framework, strengthening security and compliance posture across the platform.</li>
+                      <li>Pioneered Backend-for-Frontend (BFF) methodology, enabling backend-driven native UI pages and reducing dependency on app builds/releases for rapid feature deployment.</li>
                     </ul>
-                    <div style={{marginTop: '0.5rem', fontSize: '1rem'}}><b>Stack:</b> AWS, Docker, Python (Django), Golang, Bitbucket, Jenkins</div>
+                    <div style={{marginTop: '0.5rem', fontSize: '1rem'}}><b>Stack:</b> Python (Django), Golang, AWS (SNS, Lambda, EventBridge, ECS, EC2, RDS), PostgreSQL, Docker</div>
                   </div>
                 </div>
                 {/* Angel One */}
@@ -166,6 +167,126 @@ export default function App() {
             </div>
           </section>
         )}
+        {activeTab === 'projects' && (
+          <section id="projects" className="projects-section">
+            <div className="section-container">
+              <h2>Code Projects</h2>
+              <div className="tile-grid">
+                {/* Type Strike */}
+                <a href="https://github.com/CpBruceMeena/type-strike" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Type Strike</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">Gamified typing arcade — 500 levels, combo engine, global leaderboards, and daily contests.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">TypeScript</span>
+                    <span className="tech-tag">Next.js</span>
+                    <span className="tech-tag">PostgreSQL</span>
+                  </div>
+                </a>
+
+                {/* Sync */}
+                <a href="https://github.com/CpBruceMeena/sync" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Sync</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">Real-time comm platform — Go + Next.js, WebSocket, JWT auth, group chat with presence tracking.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">Go</span>
+                    <span className="tech-tag">Next.js</span>
+                    <span className="tech-tag">WebSocket</span>
+                  </div>
+                </a>
+
+                {/* Go Starter */}
+                <a href="https://github.com/CpBruceMeena/go-starter" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Go Starter</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">Production Go template — observability, circuit breaker, AWS SQS, multi-stage Docker.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">Go</span>
+                    <span className="tech-tag">AWS</span>
+                    <span className="tech-tag">Docker</span>
+                  </div>
+                </a>
+
+                {/* Center */}
+                <a href="https://github.com/CpBruceMeena/center" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Center</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">API Gateway — dynamic reverse proxy, Clerk SSO, health monitoring, admin console.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">Go (Gin)</span>
+                    <span className="tech-tag">React</span>
+                    <span className="tech-tag">PostgreSQL</span>
+                  </div>
+                </a>
+
+                {/* Interview Prep */}
+                <a href="https://github.com/CpBruceMeena/interview-prep" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Interview Prep</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">Staff/Principal prep — 18 LLD projects, RAG chatbots, 90+ CS questions across 8 topics.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">Python</span>
+                    <span className="tech-tag">Go</span>
+                    <span className="tech-tag">RAG</span>
+                  </div>
+                </a>
+
+                {/* Curio */}
+                <a href="https://github.com/CpBruceMeena/curio" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Curio</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">Knowledge discovery app — swipeable facts, puzzles, novels, TTS, all in a dark-first feed.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">Kotlin</span>
+                    <span className="tech-tag">Jetpack Compose</span>
+                    <span className="tech-tag">ExoPlayer</span>
+                  </div>
+                </a>
+
+                {/* Playlist */}
+                <a href="https://github.com/CpBruceMeena/playlist" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Playlist</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">AI-powered YouTube playlist generator — natural language queries, smart filters, Android app.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">Kotlin</span>
+                    <span className="tech-tag">Jetpack Compose</span>
+                    <span className="tech-tag">YouTube API</span>
+                  </div>
+                </a>
+
+                {/* Yooboo */}
+                <a href="https://github.com/CpBruceMeena/yooboo" target="_blank" rel="noopener noreferrer" className="tile-card">
+                  <div className="tile-header">
+                    <span className="tile-title">Yooboo</span>
+                    <GitHubIcon />
+                  </div>
+                  <p className="tile-desc">Real-time multiplayer card game — stacking penalties, special cards, elimination rounds.</p>
+                  <div className="tile-tech">
+                    <span className="tech-tag">TypeScript</span>
+                    <span className="tech-tag">Socket.IO</span>
+                    <span className="tech-tag">Next.js</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
         {activeTab === 'internships' && (
           <section id="internships" className="projects-section">
             <div className="section-container">
@@ -192,129 +313,6 @@ export default function App() {
                       <li>Built comprehensive frontend web forms and robust backend architecture</li>
                       <li>Delivered end-to-end solution from requirements gathering to deployment</li>
                     </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
-        {activeTab === 'projects' && (
-          <section id="projects" className="projects-section">
-            <div className="section-container">
-              <h2>Code Projects</h2>
-              <div className="projects-grid">
-                {/* Go-Balance */}
-                <div className="project-card">
-                  <div className="project-header">
-                    <div className="project-title">
-                      Go-Balance
-                      <span className="project-status">Active</span>
-                    </div>
-                    <div className="project-links">
-                      <a href="https://github.com/CpBruceMeena/Go-Balance" className="project-gh-link" target="_blank" rel="noopener noreferrer" title="View on GitHub">
-                        <GitHubIcon />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="project-desc">A modern, scalable load balancer built in Go with a React.js web interface.</div>
-                  <ul className="project-features">
-                    <li>Multiple load balancing algorithms (Round Robin, Least Connections, Weighted, IP Hash)</li>
-                    <li>Cluster management, node-level and cluster-level live monitoring</li>
-                    <li>Rate limiting, health checks, SSL/TLS termination, real-time metrics</li>
-                    <li>Modern React.js UI, modular routing, and comprehensive logging</li>
-                  </ul>
-                  <div className="project-tech">
-                    <span className="tech-tag">Go</span>
-                    <span className="tech-tag">React.js</span>
-                    <span className="tech-tag">TypeScript</span>
-                    <span className="tech-tag">Docker</span>
-                    <span className="tech-tag">Material-UI</span>
-                  </div>
-                </div>
-
-                {/* Go-Chatsync */}
-                <div className="project-card">
-                  <div className="project-header">
-                    <div className="project-title">
-                      Go-Chatsync
-                      <span className="project-status">Active</span>
-                    </div>
-                    <div className="project-links">
-                      <a href="https://github.com/CpBruceMeena/Go-Chatsync" className="project-gh-link" target="_blank" rel="noopener noreferrer" title="View on GitHub">
-                        <GitHubIcon />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="project-desc">A real-time chat application built with Go and React, featuring private messaging and group chat functionality.</div>
-                  <ul className="project-features">
-                    <li>WebSocket-based real-time messaging, private and group chat</li>
-                    <li>Message history persistence, unread counts, last seen timestamps</li>
-                    <li>User presence tracking, group management, and live updates</li>
-                    <li>Modern Material-UI frontend, responsive design</li>
-                  </ul>
-                  <div className="project-tech">
-                    <span className="tech-tag">Go</span>
-                    <span className="tech-tag">React.js</span>
-                    <span className="tech-tag">WebSocket</span>
-                    <span className="tech-tag">Material-UI</span>
-                  </div>
-                </div>
-
-                {/* Golang NexusPoint */}
-                <div className="project-card">
-                  <div className="project-header">
-                    <div className="project-title">
-                      Golang NexusPoint
-                      <span className="project-status">Active</span>
-                    </div>
-                    <div className="project-links">
-                      <a href="https://github.com/CpBruceMeena/Golang-NexusPoint" className="project-gh-link" target="_blank" rel="noopener noreferrer" title="View on GitHub">
-                        <GitHubIcon />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="project-desc">A microservices-based application demonstrating gRPC and HTTP communication between services.</div>
-                  <ul className="project-features">
-                    <li>Central service (gRPC + HTTP), client service, and simple HTTP microservice</li>
-                    <li>Protocol Buffers for API definitions and code generation</li>
-                    <li>API endpoints for user and product management, extensible proto structure</li>
-                    <li>Great for learning Go microservices, gRPC, and service orchestration</li>
-                  </ul>
-                  <div className="project-tech">
-                    <span className="tech-tag">Go</span>
-                    <span className="tech-tag">gRPC</span>
-                    <span className="tech-tag">Protocol Buffers</span>
-                    <span className="tech-tag">HTTP</span>
-                    <span className="tech-tag">Microservices</span>
-                  </div>
-                </div>
-
-                {/* GoPyExpress */}
-                <div className="project-card">
-                  <div className="project-header">
-                    <div className="project-title">
-                      GoPyExpress
-                      <span className="project-status">Active</span>
-                    </div>
-                    <div className="project-links">
-                      <a href="https://github.com/CpBruceMeena/GoPyExpress" className="project-gh-link" target="_blank" rel="noopener noreferrer" title="View on GitHub">
-                        <GitHubIcon />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="project-desc">Efficient Go/Python communication demo, comparing REST API and shared memory.</div>
-                  <ul className="project-features">
-                    <li>Direct HTTP API calls and shared memory with HTTP signaling</li>
-                    <li>Performance comparison, load testing with Locust, and detailed logging</li>
-                    <li>Automatic resource cleanup and error handling</li>
-                    <li>Great for benchmarking and learning cross-language communication</li>
-                  </ul>
-                  <div className="project-tech">
-                    <span className="tech-tag">Go</span>
-                    <span className="tech-tag">Python</span>
-                    <span className="tech-tag">REST</span>
-                    <span className="tech-tag">Shared Memory</span>
-                    <span className="tech-tag">Locust</span>
                   </div>
                 </div>
               </div>
