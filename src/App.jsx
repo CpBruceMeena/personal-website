@@ -91,7 +91,7 @@ export default function App() {
                   <b>Principal Software Engineer</b> with 6+ years of experience designing and building large-scale fintech and AI products that serve millions of users and drive measurable business growth. Currently leading backend engineering at INDMONEY, I specialize in high-performance distributed systems, complex financial integrations, and cloud-native architectures.
                 </p>
                 <p>
-                  My journey spans top organizations including INDMONEY, Angel One, and Goldman Sachs, where I've delivered solutions handling billions in transactions — from optimizing high-traffic trading applications processing 100+ GB daily to building AI-powered recommendation engines driving ₹50 Cr+ in annual revenue.
+                  My journey spans top organizations including INDMONEY, Angel One, and Goldman Sachs, where I've delivered solutions handling billions in transactions — from optimizing high-traffic trading applications processing 100+ GB daily to setting up neobank for remittance in US stocks, powering US stocks investment.
                 </p>
                 <p>
                   <b>Key strengths:</b>
@@ -140,7 +140,7 @@ export default function App() {
                     <h3>Angel One <span style={{fontWeight:400}}>- Senior Software Engineer (SDE-2) (Feb 2022 – Sep 2024)</span></h3>
                     <ul>
                       <li>Modernized and migrated core trading and portfolio systems from legacy stacks to Golang and PySpark, significantly improving system performance, reliability, and maintainability for 20M+ users.</li>
-                      <li>Developed and launched an AI-powered recommendations engine, driving ₹50 Cr+ in annual revenue and enhancing user engagement through intelligent stock discovery and personalized advisory.</li>
+                      <li>Developed and launched an recommendations engine, driving ₹50 Cr+ in annual revenue and enhancing user engagement through intelligent stock discovery and personalized advisory.</li>
                       <li>Unified portfolio management by consolidating multiple financial instruments, resulting in a 45% improvement in Net Promoter Score (NPS) and a seamless user experience.</li>
                       <li>Engineered robust big data pipelines and observability infrastructure, optimizing data processing for 100+ GB daily and ensuring high system availability and monitoring.</li>
                       <li>Reduced complex algorithm calculation time from 4 hours to 30 minutes, enabling real-time portfolio aggregation and reporting for millions of users.</li>
